@@ -341,6 +341,7 @@ public abstract class ShareIntent {
             chooser = Intent.createChooser(this.getIntent(), this.chooserTitle);
         }
         chooser.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        chooser.putExtra(Intent.EXTRA_TITLE, this.chooserTitle);
 
         if (ShareIntent.hasValidKey("showAppsToView", options) && ShareIntent.hasValidKey("url", options)) {
             Intent viewIntent = new Intent(Intent.ACTION_VIEW);
